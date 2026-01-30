@@ -1,0 +1,30 @@
+{
+  "name": "ui-foundation-storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.0",
+    "@storybook/addon-a11y": "^10.2.1",
+    "@storybook/addon-docs": "^10.2.1",
+    "@storybook/addon-vitest": "^10.2.1",
+    "@storybook/web-components-vite": "^10.2.1",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
+    "lit": "^3.3.2",
+    "playwright": "^1.58.0",
+    "storybook": "^10.2.1",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@parthi033/ui-foundation": "^0.0.4"
+  }
+}
