@@ -55,7 +55,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: storybook-build
-        path: storybook-static
+        path: ./
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -63,7 +63,7 @@ jobs:
     - name: Upload to GitHub Pages
       uses: actions/upload-pages-artifact@v3
       with:
-        path: storybook-static
+        path: ./
 
     - name: Deploy to GitHub Pages
       id: deployment
