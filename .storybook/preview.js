@@ -1,7 +1,6 @@
 /** @type { import('@storybook/web-components-vite').Preview } */
 import '@parthi033/ui-foundation/dist/components/pn-button';
 
-
 const preview = {
   parameters: {
     controls: {
@@ -16,7 +15,19 @@ const preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: "todo"
-    }
+    },
+
+    // Set initial story to avoid loading non-existent examples
+    options: {
+      storySort: {
+        order: ['UI Foundation', '*'],
+      },
+    },
+  },
+
+  // Set initial story to your pn-button component
+  initialGlobals: {
+    storyId: 'ui-foundation-pn-button--primary',
   },
 };
 

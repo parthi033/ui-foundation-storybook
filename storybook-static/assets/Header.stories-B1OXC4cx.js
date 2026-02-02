@@ -1,4 +1,4 @@
-import{d as t}from"./iframe-DnQ-r3ga.js";import{B as r}from"./Button-C36mT6ze.js";const i=({user:a,onLogin:l,onLogout:n,onCreateAccount:d})=>t`
+import{d as t}from"./iframe-BZscOS2i.js";import{B as r}from"./Button-zdnwM9Jb.js";const i=({user:a,onLogin:l,onLogout:n,onCreateAccount:d})=>t`
   <header>
     <div class="storybook-header">
       <div>
