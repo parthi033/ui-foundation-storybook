@@ -1,10 +1,12 @@
 name: Chromatic
 
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  # Temporarily disabled - uncomment when ready to use Chromatic
+  # push:
+  #   branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
+  workflow_dispatch: # Allow manual triggering only
 
 jobs:
   chromatic:
