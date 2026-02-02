@@ -20,4 +20,23 @@ const preview = {
   },
 };
 
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Light or Dark theme',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      items: ['light', 'dark'],
+    },
+  },
+};
+
+export const decorators = [
+  (Story, context) => {
+    document.documentElement.className = context.globals.theme;
+    return Story();
+  },
+];
+
 export default preview;
