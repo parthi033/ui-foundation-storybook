@@ -58,6 +58,11 @@ Primary.parameters = {
     description: {
       story: 'The primary button is used for main actions in your interface.'
     }
+  },
+  percy: {
+    additionalSnapshots: [
+      { suffix: ' – Dark', args: { theme: 'dark' } }
+    ]
   }
 };
 
@@ -71,6 +76,11 @@ Secondary.parameters = {
     description: {
       story: 'The secondary button is used for less important actions.'
     }
+  },
+  percy: {
+    additionalSnapshots: [
+      { suffix: ' – Dark', args: { theme: 'dark' } }
+    ]
   }
 };
 
@@ -84,6 +94,11 @@ Disabled.parameters = {
     description: {
       story: 'The disabled button shows when an action is not available.'
     }
+  },
+  percy: {
+    additionalSnapshots: [
+      { suffix: ' – Dark', args: { theme: 'dark' } }
+    ]
   }
 };
 
