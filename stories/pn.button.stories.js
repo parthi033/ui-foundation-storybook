@@ -302,11 +302,20 @@ export const IconShowcase = () => `
     <pn-button type="primary" icon-left="fas fa-heart" icon-only="true"></pn-button>
     <pn-button type="secondary" icon-left="fas fa-download" icon-only="true"></pn-button>
   </div>
+  
+  <!-- Debug: Show Font Awesome icons directly -->
+  <div style="margin-top: 20px; padding: 10px; background: #f5f5f5; border-radius: 4px;">
+    <strong>Font Awesome Test:</strong>
+    <i class="fas fa-save"></i> Save
+    <i class="fas fa-heart"></i> Heart  
+    <i class="fas fa-arrow-right"></i> Arrow
+    <i class="fas fa-download"></i> Download
+  </div>
 `;
 IconShowcase.parameters = {
   docs: {
     description: {
-      story: 'Various icon configurations including left, right, and icon-only buttons.'
+      story: 'Various icon configurations including left, right, and icon-only buttons. Includes Font Awesome test icons for debugging.'
     }
   }
 };

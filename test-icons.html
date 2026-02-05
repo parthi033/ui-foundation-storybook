@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pn-button Icon Test</title>
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>pn-button Component Icon Test</h1>
+    
+    <div class="test-section">
+        <h2>Icon Tests</h2>
+        <div class="button-row">
+            <pn-button label="Save" type="primary" icon-left="fas fa-save"></pn-button>
+            <pn-button label="Continue" type="secondary" icon-right="fas fa-arrow-right"></pn-button>
+            <pn-button type="primary" icon-left="fas fa-heart" icon-only="true"></pn-button>
+        </div>
+        
+        <h3>Direct Font Awesome Test</h3>
+        <div style="margin: 10px 0;">
+            <i class="fas fa-save"></i> Save Icon
+            <i class="fas fa-heart"></i> Heart Icon
+            <i class="fas fa-arrow-right"></i> Arrow Icon
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>All Button Types</h2>
+        <div class="button-row">
+            <pn-button label="Primary" type="primary"></pn-button>
+            <pn-button label="Secondary" type="secondary"></pn-button>
+            <pn-button label="Tertiary" type="tertiary"></pn-button>
+            <pn-button label="White" type="white"></pn-button>
+            <pn-button label="Disabled" type="disabled"></pn-button>
+        </div>
+    </div>
+
+    <script type="module">
+        import './node_modules/@parthi033/ui-foundation/dist/components/pn-button.js';
+        
+        // Log when component is loaded
+        console.log('pn-button component loaded');
+        
+        // Test if custom elements are defined
+        setTimeout(() => {
+            console.log('pn-button defined:', customElements.get('pn-button'));
+        }, 1000);
+    </script>
+</body>
+</html>
