@@ -4,113 +4,221 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # pn-button Component
 
-The `pn-button` is a versatile web component from the UI Foundation library that provides a consistent button interface across your application.
+A versatile button component with icon support and multiple variations, built with Stencil as a framework-agnostic web component.
 
 ## Overview
 
-This component offers different button types to support various use cases in your UI:
+The `pn-button` component offers comprehensive button functionality with:
 
-- **Primary**: For main actions and calls-to-action
-- **Secondary**: For supporting actions  
-- **Disabled**: For unavailable actions
+- **Multiple button types**: primary, secondary, tertiary, white, and disabled
+- **Icon support**: left, right, or icon-only configurations
+- **Style variations**: rounded corners and shadow effects
+- **Framework compatibility**: Works with React, Vue, Angular, and vanilla HTML
+- **Icon library agnostic**: Compatible with Font Awesome, Heroicons, Lucide, Bootstrap Icons, etc.
 
 ## API Reference
 
 ### Properties
 
-| Property | Type   | Default     | Description                                    |
-|----------|--------|-------------|------------------------------------------------|
-| `type`   | string | `"primary"` | The button style (primary, secondary, disabled) |
-| `label`  | string | `""`        | The text content displayed on the button      |
+| Property    | Type    | Default     | Description                                          |
+|-------------|---------|-------------|------------------------------------------------------|
+| `label`     | string  | `""`        | Text displayed on the button                        |
+| `type`      | string  | `"primary"` | Button style variant (primary, secondary, tertiary, white, disabled) |
+| `rounded`   | boolean | `false`     | Apply rounded corners                                |
+| `shadow`    | boolean | `false`     | Add shadow effect                                    |
+| `iconLeft`  | string  | `""`        | Icon class for left-side icon (e.g., "fas fa-save") |
+| `iconRight` | string  | `""`        | Icon class for right-side icon                      |
+| `iconOnly`  | boolean | `false`     | Display only icon without text                       |
 
 ## Usage Examples
 
 ### Basic Usage
 
 ```html
-<pn-button type="primary" label="Click me"></pn-button>
+<pn-button label="Click me" type="primary"></pn-button>
 ```
 
-### Different Types
+### Button Types
 
 ```html
-<!-- Primary button for main actions -->
-<pn-button type="primary" label="Save Changes"></pn-button>
+<!-- Primary for main actions -->
+<pn-button label="Save Changes" type="primary"></pn-button>
 
-<!-- Secondary button for supporting actions -->
-<pn-button type="secondary" label="Cancel"></pn-button>
+<!-- Secondary for supporting actions -->
+<pn-button label="Cancel" type="secondary"></pn-button>
 
-<!-- Disabled button for unavailable actions -->
-<pn-button type="disabled" label="Processing..."></pn-button>
+<!-- Tertiary for subtle actions -->
+<pn-button label="Learn More" type="tertiary"></pn-button>
+
+<!-- White for colored backgrounds -->
+<pn-button label="Get Started" type="white"></pn-button>
+
+<!-- Disabled for unavailable actions -->
+<pn-button label="Processing..." type="disabled"></pn-button>
 ```
 
-## Button Types
+### With Icons
 
-### Primary Button
-Primary buttons are used for the most important actions in your interface, such as:
-- Submit forms
-- Confirm actions
-- Primary navigation
+```html
+<!-- Icon on the left -->
+<pn-button label="Save Document" type="primary" icon-left="fas fa-save"></pn-button>
 
-### Secondary Button
-Secondary buttons are used for less critical actions:
-- Cancel operations
-- Secondary navigation
-- Alternative actions
+<!-- Icon on the right -->
+<pn-button label="Continue" type="secondary" icon-right="fas fa-arrow-right"></pn-button>
 
-### Disabled Button
-Disabled buttons indicate that an action is temporarily unavailable:
-- Form validation pending
-- Processing states
-- Insufficient permissions
+<!-- Icon only -->
+<pn-button type="primary" icon-left="fas fa-heart" icon-only="true"></pn-button>
+```
+
+### Style Variations
+
+```html
+<!-- Rounded corners -->
+<pn-button label="Rounded" type="primary" rounded="true"></pn-button>
+
+<!-- With shadow -->
+<pn-button label="Shadow" type="primary" shadow="true"></pn-button>
+
+<!-- Combined features -->
+<pn-button 
+  label="Enhanced Button" 
+  type="primary" 
+  icon-left="fas fa-star"
+  rounded="true" 
+  shadow="true">
+</pn-button>
+```
+
+## Icon Library Support
+
+The component works with any CSS-based icon library:
+
+### Font Awesome
+```html
+<pn-button label="Save" icon-left="fas fa-save"></pn-button>
+<pn-button label="User" icon-left="far fa-user"></pn-button>
+```
+
+### Heroicons
+```html
+<pn-button label="Settings" icon-left="heroicon-o-cog"></pn-button>
+```
+
+### Lucide Icons
+```html
+<pn-button label="Search" icon-left="lucide lucide-search"></pn-button>
+```
+
+### Bootstrap Icons
+```html
+<pn-button label="Home" icon-left="bi bi-house"></pn-button>
+```
+
+## Framework Integration
+
+### React
+```jsx
+import '@parthi033/ui-foundation/dist/components/pn-button';
+
+function App() {
+  return (
+    <pn-button 
+      label="Save Document"
+      type="primary"
+      iconLeft="fas fa-save"
+      shadow={true}
+    />
+  );
+}
+```
+
+### Vue
+```vue
+<template>
+  <pn-button 
+    :label="'Save Document'"
+    type="primary" 
+    icon-left="fas fa-save"
+    :shadow="true"
+  />
+</template>
+
+<script>
+import '@parthi033/ui-foundation/dist/components/pn-button';
+</script>
+```
+
+### Angular
+```typescript
+// app.module.ts
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import '@parthi033/ui-foundation/dist/components/pn-button';
+
+@NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+```
+
+```html
+<pn-button 
+  label="Save Document"
+  type="primary"
+  [iconLeft]="'fas fa-save'"
+  [shadow]="true">
+</pn-button>
+```
 
 ## Best Practices
 
 ### Do's ✅
 
 - Use primary buttons for the most important action on a page
-- Use secondary buttons for supporting actions
-- Keep button labels clear and concise
-- Use disabled state to prevent invalid actions
+- Use secondary buttons for supporting actions  
+- Use tertiary buttons for subtle, less prominent actions
+- Keep button labels clear and action-oriented
+- Use icon-only buttons sparingly and with clear context
+- Combine rounded and shadow effects thoughtfully
 
 ### Don'ts ❌
 
 - Don't use multiple primary buttons in the same context
 - Don't use vague labels like "Click here" or "Submit"
 - Don't rely solely on color to convey meaning
-- Don't make buttons too small for touch targets
+- Don't make touch targets too small (minimum 44px)
+- Don't overuse shadow effects
 
 ## Accessibility
 
 The `pn-button` component includes built-in accessibility features:
 
-- **Keyboard navigation**: Supports focus and activation via keyboard
-- **Screen reader support**: Proper labeling and role attributes
-- **Focus indicators**: Clear visual focus states
-- **Touch targets**: Adequate size for touch interaction
+- **Keyboard navigation**: Full keyboard support with focus indicators
+- **Screen reader support**: Proper ARIA attributes and semantic HTML
+- **Touch targets**: Adequate size for touch interaction (minimum 44px)
+- **High contrast**: Color combinations meet WCAG guidelines
+- **Focus management**: Clear visual focus indicators
 
-## Integration
+## Theming
 
-To use this component in your project:
+Customize the appearance using CSS custom properties:
 
-1. **Install the UI Foundation library**:
-   ```bash
-   npm install @parthi033/ui-foundation
-   ```
+```css
+:root {
+  --color-primary: #7009d1;
+  --color-secondary: #bf07b6;
+  --color-tertiary: #045c5a;
+}
 
-2. **Import the component**:
-   ```javascript
-   import '@parthi033/ui-foundation/dist/components/pn-button';
-   ```
-
-3. **Use in your HTML**:
-   ```html
-   <pn-button type="primary" label="Get Started"></pn-button>
-   ```
+/* Dark theme support */
+:root.dark {
+  --color-primary-l: 16%;
+  --color-secondary-l: 16%;
+  --color-tertiary-l: 16%;
+}
+```
 
 ## Browser Support
 
-The `pn-button` component supports all modern browsers that support Custom Elements:
+The component supports all modern browsers with Custom Elements support:
 
 - Chrome 54+
 - Firefox 63+
@@ -119,4 +227,4 @@ The `pn-button` component supports all modern browsers that support Custom Eleme
 
 ---
 
-*For more information about the UI Foundation library, visit the [project repository](https://github.com/parthi033/ui-foundation).*
+*Part of the [@parthi033/ui-foundation](https://github.com/parthi033/ui-foundation) component library.*

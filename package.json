@@ -27,6 +27,6 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@parthi033/ui-foundation": "^0.0.5"
+    "@parthi033/ui-foundation": "^0.1.0"
   }
 }
