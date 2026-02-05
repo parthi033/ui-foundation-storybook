@@ -10,7 +10,7 @@ A versatile button component with icon support and multiple variations, built wi
 
 The `pn-button` component offers comprehensive button functionality with:
 
-- **Multiple button types**: primary, secondary, tertiary, white, and disabled
+- **Multiple button types**: primary, secondary, tertiary, transparent, and disabled
 - **Icon support**: left, right, or icon-only configurations
 - **Style variations**: rounded corners and shadow effects
 - **Framework compatibility**: Works with React, Vue, Angular, and vanilla HTML
@@ -23,7 +23,7 @@ The `pn-button` component offers comprehensive button functionality with:
 | Property    | Type    | Default     | Description                                          |
 |-------------|---------|-------------|------------------------------------------------------|
 | `label`     | string  | `""`        | Text displayed on the button                        |
-| `type`      | string  | `"primary"` | Button style variant (primary, secondary, tertiary, white, disabled) |
+| `type`      | string  | `"primary"` | Button style variant (primary, secondary, tertiary, transparent, disabled) |
 | `rounded`   | boolean | `false`     | Apply rounded corners                                |
 | `shadow`    | boolean | `false`     | Add shadow effect                                    |
 | `iconLeft`  | string  | `""`        | Icon class for left-side icon (e.g., "fas fa-save") |
@@ -50,8 +50,8 @@ The `pn-button` component offers comprehensive button functionality with:
 <!-- Tertiary for subtle actions -->
 <pn-button label="Learn More" type="tertiary"></pn-button>
 
-<!-- White for colored backgrounds -->
-<pn-button label="Get Started" type="white"></pn-button>
+<!-- Transparent for images or colored backgrounds -->
+<pn-button label="Get Started" type="transparent"></pn-button>
 
 <!-- Disabled for unavailable actions -->
 <pn-button label="Processing..." type="disabled"></pn-button>

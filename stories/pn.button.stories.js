@@ -17,7 +17,7 @@ A versatile button component with icon support and multiple variations.
 
 ## Features
 
-- Multiple button types (primary, secondary, tertiary, white, disabled)
+- Multiple button types (primary, secondary, tertiary, transparent, disabled)
 - Icon support (left, right, or icon-only)
 - Rounded corners and shadow effects
 - Works with any CSS icon library (Font Awesome, Heroicons, etc.)
@@ -37,7 +37,7 @@ A versatile button component with icon support and multiple variations.
     },
     type: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary', 'white', 'disabled'],
+      options: ['primary', 'secondary', 'tertiary', 'transparent', 'disabled'],
       description: 'Button style variant',
       table: {
         type: { summary: 'string' },
@@ -152,15 +152,15 @@ Tertiary.parameters = {
   }
 };
 
-export const White = Template.bind({});
-White.args = {
-  label: 'White Button',
-  type: 'white'
+export const Transparent = Template.bind({});
+Transparent.args = {
+  label: 'Transparent Button',
+  type: 'transparent'
 };
-White.parameters = {
+Transparent.parameters = {
   docs: {
     description: {
-      story: 'The white button works well on colored backgrounds.'
+      story: 'The transparent button works well over images or colored backgrounds.'
     }
   },
   percy: {
@@ -282,7 +282,7 @@ export const AllTypes = () => `
     <pn-button label="Primary" type="primary"></pn-button>
     <pn-button label="Secondary" type="secondary"></pn-button>
     <pn-button label="Tertiary" type="tertiary"></pn-button>
-    <pn-button label="White" type="white"></pn-button>
+    <pn-button label="Transparent" type="transparent"></pn-button>
     <pn-button label="Disabled" type="disabled"></pn-button>
   </div>
 `;
