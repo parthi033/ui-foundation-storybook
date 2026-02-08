@@ -37,11 +37,11 @@ A versatile button component with icon support and multiple variations.
     },
     type: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary', 'transparent', 'disabled'],
+      options: ['primary', 'secondary', 'tertiary', 'white', 'transparent', 'disabled'],
       description: 'Button style variant',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'primary' }
+        type: { summary: "'primary' | 'secondary' | 'tertiary' | 'white' | 'transparent' | 'disabled'" },
+        defaultValue: { summary: "'primary'" }
       }
     },
     rounded: {
@@ -276,12 +276,28 @@ Combined.parameters = {
   }
 };
 
+// White button
+export const White = Template.bind({});
+White.args = {
+  label: 'White Button',
+  type: 'white'
+};
+White.parameters = {
+  docs: {
+    description: {
+      story: 'The white button is ideal for use on dark or colored backgrounds.'
+    }
+  },
+  backgrounds: { default: 'dark' }
+};
+
 // Showcase all types
 export const AllTypes = () => `
   <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
     <pn-button label="Primary" type="primary"></pn-button>
     <pn-button label="Secondary" type="secondary"></pn-button>
     <pn-button label="Tertiary" type="tertiary"></pn-button>
+    <pn-button label="White" type="white"></pn-button>
     <pn-button label="Transparent" type="transparent"></pn-button>
     <pn-button label="Disabled" type="disabled"></pn-button>
   </div>

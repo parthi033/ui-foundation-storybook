@@ -23,7 +23,7 @@ The `pn-button` component offers comprehensive button functionality with:
 | Property    | Type    | Default     | Description                                          |
 |-------------|---------|-------------|------------------------------------------------------|
 | `label`     | string  | `""`        | Text displayed on the button                        |
-| `type`      | string  | `"primary"` | Button style variant (primary, secondary, tertiary, transparent, disabled) |
+| `type`      | string  | `"primary"` | Button style variant (primary, secondary, tertiary, white, transparent, disabled) |
 | `rounded`   | boolean | `false`     | Apply rounded corners                                |
 | `shadow`    | boolean | `false`     | Add shadow effect                                    |
 | `iconLeft`  | string  | `""`        | Icon class for left-side icon (e.g., "fas fa-save") |
@@ -49,6 +49,9 @@ The `pn-button` component offers comprehensive button functionality with:
 
 <!-- Tertiary for subtle actions -->
 <pn-button label="Learn More" type="tertiary"></pn-button>
+
+<!-- White for dark backgrounds -->
+<pn-button label="White Button" type="white"></pn-button>
 
 <!-- Transparent for images or colored backgrounds -->
 <pn-button label="Get Started" type="transparent"></pn-button>
