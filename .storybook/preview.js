@@ -17,17 +17,11 @@ const preview = {
       test: "todo"
     },
 
-    // Set initial story to avoid loading non-existent examples
     options: {
       storySort: {
         order: ['UI Foundation', '*'],
       },
     },
-  },
-
-  // Set initial story to your pn-button component
-  initialGlobals: {
-    storyId: 'ui-foundation-pn-button--primary',
   },
 };
 

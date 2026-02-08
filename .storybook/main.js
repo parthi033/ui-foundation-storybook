@@ -12,6 +12,15 @@ const config = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/web-components-vite"
+  "framework": "@storybook/web-components-vite",
+  "managerHead": (head) => `
+    ${head}
+    <script>
+      // Redirect default Storybook landing to pn-button docs
+      if (window.location.search.includes('configure-your-project--docs')) {
+        window.location.replace(window.location.origin + window.location.pathname + '?path=/docs/ui-foundation-pn-button--docs');
+      }
+    </script>
+  `
 };
 export default config;
